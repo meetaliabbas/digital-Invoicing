@@ -1,0 +1,88 @@
+PROJECT SUMMARY
+================
+Multi-Tenant FBR Digital Invoicing & Fiscalization Platform
+Generated: 2026-08-07
+
+OVERVIEW
+--------
+This is a React 18 single-page application (react-scripts / CRA) that
+demonstrates a redesigned, multi-tenant platform for FBR (Federal Board
+of Revenue, Pakistan) digital invoice fiscalization. The original large
+legacy codebase was stripped down to a focused demo centered on the
+"PlatformRedesign" module (src/pages/PlatformRedesign).
+
+TECH STACK
+----------
+- React 18.2, React Router DOM 6.22
+- Reactstrap 9.2 / Bootstrap 5.3
+- node-sass for SCSS styling
+- react-scripts 5.0.1 (Create React App tooling)
+- Dev server runs on port 3009 (npm start)
+
+APPLICATION STRUCTURE
+----------------------
+Routing entry:      src/Routes/index.js
+Layout shell:        src/pages/PlatformRedesign/RedesignLayout.js
+Shared context:      src/pages/PlatformRedesign/TenantContext.js (tenant switcher)
+Mock data:            src/pages/PlatformRedesign/data.js
+Branding:             src/pages/PlatformRedesign/BrandMark.js
+
+PAGES / ROUTES (9 total)
+-------------------------
+1. /platform/login             - Login.js            - Auth screen (email/password, mock)
+2. /platform/dashboard         - Dashboard.js         - Platform overview: KPIs, fiscalization
+                                                         trend chart, tenants-by-plan breakdown,
+                                                         recent invoices table
+3. /platform/invoices          - InvoiceList.js       - Searchable/filterable list of fiscalized
+                                                         invoices
+4. /platform/invoices/create   - CreateInvoice.js     - New invoice creation form
+5. /platform/buyers            - BuyerProfiles.js     - Buyer/customer profile management
+6. /platform/tenants           - Tenants.js (NEW)     - Tenant directory: status, plan tier,
+                                                         city, branch counts, workspace switch
+7. /platform/reports           - Reports.js           - Reporting/analytics screen
+8. /platform/notifications     - Notifications.js(NEW)- FBR submission alerts (success/warning/
+                                                         rejection filters)
+9. /platform/settings          - Settings.js (NEW)    - Business profile, bank details, and
+                                                         FBR sandbox/production API integration
+                                                         settings
+
+RECENTLY ADDED (this session's "3 more pages")
+------------------------------------------------
+- Tenants.js         - multi-tenant directory/workspace switcher
+- Notifications.js   - FBR alert center
+- Settings.js        - business & FBR integration settings
+All three are wired into src/Routes/index.js and linked from the sidebar
+navigation in RedesignLayout.js (Tenants, Alerts, Settings).
+
+NAVIGATION (sidebar)
+---------------------
+Overview | Invoices | New | Buyers | Tenants | Reports | Alerts | Settings
+
+VERIFICATION PERFORMED
+------------------------
+- Dev server confirmed running and reachable at http://localhost:3009
+  (HTTP 200).
+- All 9 routes were loaded headlessly (Playwright + Chromium, 1440x900
+  viewport) and captured as full-page screenshots with no console/route
+  failures.
+- Spot-checked Dashboard, Tenants, Notifications, and Settings renders
+  visually; layout, mock data, and styling all display correctly.
+
+SCREENSHOTS IN THIS FOLDER
+----------------------------
+01-login.png            Login screen
+02-dashboard.png        Platform Overview dashboard
+03-invoice-list.png     Invoice list
+04-create-invoice.png   Create Invoice form
+05-buyer-profiles.png   Buyer Profiles
+06-tenants.png          Tenants directory (new page)
+07-reports.png          Reports
+08-notifications.png    Notifications / Alerts (new page)
+09-settings.png         Business Settings (new page)
+
+NOTES / OPEN ITEMS
+--------------------
+- Auth is currently mocked (login navigates straight to dashboard; no
+  route guard enforcing authentication before accessing other pages).
+- All page changes (including the 3 new pages) are uncommitted in git
+  as of this summary - not yet committed to version control.
