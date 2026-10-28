@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { font-family: Arial, Helvetica, sans-serif; color: #18212f; background: #f4f7fb; }
+a { color: inherit; }
+button, input { font: inherit; }
+.shell { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.panel { width: 100%; max-width: 440px; background: white; border: 1px solid #e3e8ef; border-radius: 16px; padding: 32px; box-shadow: 0 12px 40px rgba(25, 45, 75, .07); }
+h1 { margin: 0 0 8px; font-size: 27px; }
+.muted { color: #667085; line-height: 1.5; }
+form { display: grid; gap: 14px; margin-top: 24px; }
+label { display: grid; gap: 7px; font-size: 14px; font-weight: 600; }
+input { width: 100%; border: 1px solid #cbd5e1; border-radius: 9px; padding: 12px; background: #fff; }
+button, .button { border: 0; border-radius: 9px; padding: 12px 16px; color: white; background: #174ea6; cursor: pointer; font-weight: 700; text-decoration: none; text-align: center; }
+button:disabled { opacity: .6; cursor: wait; }
+.links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; color: #174ea6; font-size: 14px; }
+.notice { border-radius: 8px; padding: 12px; background: #eef6ff; color: #174ea6; font-size: 14px; }
+.error { border-radius: 8px; padding: 12px; background: #fff1f0; color: #a61b1b; font-size: 14px; }
+.page { max-width: 1000px; margin: 0 auto; padding: 32px 20px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid #e3e8ef; }
+.card { margin-top: 24px; background: white; border: 1px solid #e3e8ef; border-radius: 14px; padding: 24px; }
