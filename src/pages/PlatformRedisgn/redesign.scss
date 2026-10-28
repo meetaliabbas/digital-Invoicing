@@ -1,0 +1,537 @@
+// New UI pattern for the Multi-Tenant FBR Digital Invoicing & Fiscalization Platform.
+// Scoped under .rdx- classes so it layers on top of the existing theme (colors/vars) without
+// touching the legacy admin-template styles.
+
+.rdx-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--vz-body-bg);
+}
+
+.rdx-rail {
+  width: 84px;
+  flex-shrink: 0;
+  background: var(--vz-vertical-menu-bg, #fff);
+  border-right: 1px solid var(--vz-border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.rdx-rail-brand {
+  margin-bottom: 28px;
+}
+
+.rdx-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rdx-logo-tile {
+  border-radius: 12px;
+  background: linear-gradient(145deg, #6366f1 0%, #a855f7 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.65);
+  flex-shrink: 0;
+}
+
+.rdx-logo-word {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+
+  strong {
+    font-weight: 800;
+  }
+}
+
+.rdx-rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.rdx-rail-link {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--vz-secondary-color);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  i {
+    font-size: 19px;
+    line-height: 1;
+  }
+
+  &:hover {
+    background: rgba(var(--vz-primary-rgb), 0.08);
+    color: var(--vz-primary);
+  }
+
+  &.active {
+    background: var(--vz-primary);
+    color: #fff;
+    box-shadow: 0 6px 14px -4px rgba(var(--vz-primary-rgb), 0.55);
+  }
+}
+
+.rdx-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rdx-topbar {
+  height: 68px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--vz-header-bg, #fff);
+  border-bottom: 1px solid var(--vz-border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.rdx-tenant-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--vz-border-color);
+  cursor: pointer;
+  background: var(--vz-secondary-bg, #fff);
+}
+
+.rdx-tenant-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--vz-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.rdx-fbr-badge {
+  height: 34px;
+  object-fit: contain;
+}
+
+.rdx-content {
+  padding: 24px;
+  flex: 1;
+}
+
+.rdx-page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.rdx-kpi-card {
+  border-radius: 16px;
+  border: 1px solid var(--vz-border-color);
+  padding: 20px;
+  background: var(--vz-secondary-bg, #fff);
+  height: 100%;
+}
+
+.rdx-kpi-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.rdx-card {
+  border-radius: 16px;
+  border: 1px solid var(--vz-border-color);
+  background: var(--vz-secondary-bg, #fff);
+}
+
+.rdx-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(var(--vz-dark-rgb, 33, 37, 41), 0.08);
+  overflow: hidden;
+}
+
+.rdx-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.rdx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rdx-buyer-card {
+  border-radius: 16px;
+  border: 1px solid var(--vz-border-color);
+  background: var(--vz-secondary-bg, #fff);
+  padding: 18px;
+  height: 100%;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+  }
+}
+
+.rdx-buyer-card-active {
+  border-color: var(--vz-primary);
+  box-shadow: 0 0 0 3px rgba(var(--vz-primary-rgb), 0.12);
+}
+
+.rdx-notif-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: rgba(var(--vz-primary-rgb), 0.05);
+  }
+
+  &.unread {
+    background: rgba(var(--vz-primary-rgb), 0.04);
+  }
+}
+
+.rdx-notif-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.rdx-notif-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vz-primary);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.rdx-env-toggle {
+  border-radius: 12px;
+  background: var(--vz-light, rgba(0, 0, 0, 0.03));
+}
+
+.rdx-auth-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+.rdx-auth-brand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  color: #fff;
+  background: linear-gradient(160deg, #4f46e5 0%, #1e1b4b 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  &::before {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+    top: -140px;
+    right: -120px;
+  }
+
+  &::after {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    bottom: -100px;
+    left: -80px;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+}
+
+.rdx-auth-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);
+}
+
+.rdx-auth-mock {
+  width: 280px;
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.45);
+  align-self: center;
+  animation: rdx-float 5s ease-in-out infinite;
+}
+
+.rdx-auth-mock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.rdx-auth-mock-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.rdx-auth-mock-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rdx-auth-mock-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+
+  &.w-70 {
+    width: 70%;
+  }
+  &.w-45 {
+    width: 45%;
+  }
+  &.w-90 {
+    width: 90%;
+  }
+}
+
+.rdx-auth-mock-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(46, 213, 115, 0.22);
+  color: #baffd0;
+}
+
+@keyframes rdx-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rdx-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rdx-auth-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--vz-body-bg);
+}
+
+.rdx-auth-form-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--vz-secondary-bg, #fff);
+  border: 1px solid var(--vz-border-color);
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 20px 44px -24px rgba(20, 25, 50, 0.25);
+  animation: rdx-fade-up 0.45s ease both;
+}
+
+.rdx-demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(var(--vz-success-rgb), 0.12);
+  color: var(--vz-success);
+  margin-bottom: 18px;
+}
+
+.rdx-input-icon {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: var(--vz-secondary-color);
+    font-size: 16px;
+    pointer-events: none;
+  }
+
+  input {
+    padding-left: 40px;
+  }
+
+  .rdx-input-toggle {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--vz-secondary-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+
+    &:hover {
+      background: var(--vz-light, rgba(0, 0, 0, 0.05));
+      color: var(--vz-primary);
+    }
+  }
+}
+
+.rdx-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rdx-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--vz-border-color);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vz-secondary-color);
+
+  &.active {
+    background: var(--vz-primary);
+    border-color: var(--vz-primary);
+    color: #fff;
+  }
+
+  &.done {
+    background: rgba(var(--vz-success-rgb), 0.12);
+    border-color: transparent;
+    color: var(--vz-success);
+  }
+}
+
+@media (max-width: 991px) {
+  .rdx-rail {
+    display: none;
+  }
+
+  .rdx-auth-page {
+    flex-direction: column;
+  }
+
+  .rdx-auth-brand {
+    padding: 32px;
+  }
+}
