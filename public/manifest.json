@@ -1,0 +1,13 @@
+{
+  "short_name": "FBR Invoicing",
+  "name": "Multi-Tenant FBR Digital Invoicing & Fiscalization Platform",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#405189",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "description": "Multi-tenant platform for issuing, validating and fiscalizing invoices with FBR.",
+  "lang": "en"
+}
