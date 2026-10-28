@@ -1,0 +1,26 @@
+.multiInput .ant-input-outlined,
+.multiInput .ant-input-outlined:focus,
+.multiInput .ant-input {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* @media print {
+  .page-break {
+    page-break-after: always;
+  }
+}
+
+@media screen {
+  .print-section {
+    display: none;
+  }
+}
+
+@media print {
+  .print-section {
+    display: block;
+  }
+} */
